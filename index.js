@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(router);
 
 mongoose.promise = global.promise;
-mongoose.connect(mongodbString, { useNewUrlParser: true})
+mongoose.connect(mongodbString, {useNewUrlParser: true})
 .then( (db)=>{
     console.log('mongodb connected');
 })

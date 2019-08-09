@@ -18,7 +18,7 @@ router.get('/all-trivia', (req, res)=>{
     triviaController.getAllTrivia(req, res);
 });
 
-router.post('/trivia', (req, res)=>{
+router.get('/trivia/:triviaid', (req, res)=>{
     triviaController.getTrivia(req, res);
 });
 

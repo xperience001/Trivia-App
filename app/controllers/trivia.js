@@ -24,15 +24,15 @@ class Alltrivia {
 
 
     getTrivia(req, res){
-        const id = req.query.id
-        if(!id){
+        const {triviaid} = req.params
+        if(!triviaid){
             return res.send({
                 error: true,
                 statusCode: 404,
                 message: 'oga pass id joor',
                 })
         }
-        Trivia.find({_id: id}).then((trivia) => {
+        Trivia.findById(triviaid).then((trivia) => {
             return res.send({
                 error: false,
                 statusCode: 200,
@@ -72,5 +72,6 @@ class Alltrivia {
     });
     }
 }
+
 //const TriviaInstance = new Alltrivia();
 module.exports = Alltrivia;
