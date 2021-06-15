@@ -2,6 +2,7 @@ const User = require('../models/user');
 const validator = require('validator');
 
 class Alluser {
+//     signUp a user
     signup(req,res){
         let user = new User(req.body);
         let { email } = req.body;
@@ -45,6 +46,7 @@ class Alluser {
     }) 
     }
 
+//     login a user
     login(req,res){
         let { email } = req.body;
         let { password } = req.body
